@@ -1,3 +1,4 @@
+"use client";
 /**
  * @component AnimatedShaderHero (canvas version)
  * @category Hero section

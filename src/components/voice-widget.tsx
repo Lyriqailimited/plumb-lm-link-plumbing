@@ -51,7 +51,7 @@ export default function VoiceWidget() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="ml-auto flex items-center justify-center w-14 h-14 rounded-full bg-[#F0C040] hover:bg-[#D4A830] text-black shadow-lg transition-all duration-200 cursor-pointer"
+          className="ml-auto flex items-center justify-center w-14 h-14 rounded-full bg-[#6EC1E4] hover:opacity-90 text-white shadow-lg transition-all duration-200 cursor-pointer"
           aria-label={isOpen ? "Close chat" : "Open chat"}
         >
           {isOpen ? (

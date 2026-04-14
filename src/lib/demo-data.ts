@@ -12,116 +12,60 @@ export const BOOKING_LINK =
 
 export const demoTestimonials = [
   {
-    id: 1,
-    name: "Sarah Mitchell",
-    role: "Operations Manager",
-    text: "This AI voice assistant caught leads we'd have missed overnight. Booking rate jumped 34% in the first month.",
-    avatar: "https://i.pravatar.cc/100?img=1",
-    image: "https://i.pravatar.cc/100?img=1",
-    rating: 5,
-    description:
-      "This AI voice assistant caught leads we'd have missed overnight. Booking rate jumped 34% in the first month.",
-    designation: "Operations Manager",
-    profileImage: "https://i.pravatar.cc/200?img=1",
-    jobtitle: "Operations Manager",
+    "id": 1,
+    "name": "Sarah M.",
+    "role": "Customer",
+    "text": "Link Plumbing fixed our burst pipe at midnight. Fast, professional, and the price was exactly what they quoted. Highly recommend!",
+    "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+    "rating": 5,
+    "description": "Link Plumbing fixed our burst pipe at midnight. Fast, professional, and the price was exactly what t",
+    "designation": "Customer",
+    "profileImage": "https://randomuser.me/api/portraits/women/11.jpg",
+    "jobtitle": "Homeowner"
   },
   {
-    id: 2,
-    name: "David Chen",
-    role: "Founder, PlumbPro",
-    text: "Callers get their questions answered 24/7. I used to miss 6 calls a day after hours. Now I miss zero.",
-    avatar: "https://i.pravatar.cc/100?img=12",
-    image: "https://i.pravatar.cc/100?img=12",
-    rating: 5,
-    description:
-      "Callers get their questions answered 24/7. I used to miss 6 calls a day after hours. Now I miss zero.",
-    designation: "Founder, PlumbPro",
-    profileImage: "https://i.pravatar.cc/200?img=12",
-    jobtitle: "Founder, PlumbPro",
+    "id": 2,
+    "name": "John T.",
+    "role": "Customer",
+    "text": "Blocked drain sorted within the hour. The technician was friendly and left the area spotless. Will definitely use again.",
+    "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+    "rating": 5,
+    "description": "Blocked drain sorted within the hour. The technician was friendly and left the area spotless. Will d",
+    "designation": "Customer",
+    "profileImage": "https://randomuser.me/api/portraits/men/12.jpg",
+    "jobtitle": "Homeowner"
   },
   {
-    id: 3,
-    name: "Marcus Webb",
-    role: "Service Director",
-    text: "Our customers cannot tell it's AI. The voice sounds natural and it qualifies leads better than my old receptionist.",
-    avatar: "https://i.pravatar.cc/100?img=14",
-    image: "https://i.pravatar.cc/100?img=14",
-    rating: 5,
-    description:
-      "Our customers cannot tell it's AI. The voice sounds natural and it qualifies leads better than my old receptionist.",
-    designation: "Service Director",
-    profileImage: "https://i.pravatar.cc/200?img=14",
-    jobtitle: "Service Director",
-  },
-  {
-    id: 4,
-    name: "Elena Rodriguez",
-    role: "Marketing Lead",
-    text: "ROI within 2 weeks. The widget turned our website into a 24-hour sales rep that never sleeps.",
-    avatar: "https://i.pravatar.cc/100?img=5",
-    image: "https://i.pravatar.cc/100?img=5",
-    rating: 5,
-    description:
-      "ROI within 2 weeks. The widget turned our website into a 24-hour sales rep that never sleeps.",
-    designation: "Marketing Lead",
-    profileImage: "https://i.pravatar.cc/200?img=5",
-    jobtitle: "Marketing Lead",
-  },
-  {
-    id: 5,
-    name: "James Thornton",
-    role: "Owner",
-    text: "Best investment I made this year. Setup was 20 minutes. Results showed up the next day.",
-    avatar: "https://i.pravatar.cc/100?img=7",
-    image: "https://i.pravatar.cc/100?img=7",
-    rating: 5,
-    description:
-      "Best investment I made this year. Setup was 20 minutes. Results showed up the next day.",
-    designation: "Owner",
-    profileImage: "https://i.pravatar.cc/200?img=7",
-    jobtitle: "Owner",
-  },
-  {
-    id: 6,
-    name: "Amelia Foster",
-    role: "Customer Success",
-    text: "Clients love the instant response. No more voicemail tag — questions get answered the moment they ask.",
-    avatar: "https://i.pravatar.cc/100?img=9",
-    image: "https://i.pravatar.cc/100?img=9",
-    rating: 5,
-    description:
-      "Clients love the instant response. No more voicemail tag — questions get answered the moment they ask.",
-    designation: "Customer Success",
-    profileImage: "https://i.pravatar.cc/200?img=9",
-    jobtitle: "Customer Success",
-  },
+    "id": 3,
+    "name": "Emma R.",
+    "role": "Customer",
+    "text": "Hot water system replaced same day. Great communication and fair pricing. Five stars from me.",
+    "avatar": "https://randomuser.me/api/portraits/women/13.jpg",
+    "rating": 5,
+    "description": "Hot water system replaced same day. Great communication and fair pricing. Five stars from me.",
+    "designation": "Customer",
+    "profileImage": "https://randomuser.me/api/portraits/women/13.jpg",
+    "jobtitle": "Homeowner"
+  }
 ];
 
 export const demoLogos = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-    alt: "React",
+    "src": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    "alt": "Google"
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nike-Logo.svg",
-    alt: "Nike",
+    "src": "https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg",
+    "alt": "Trustpilot"
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-    alt: "Netflix",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Hipages_logo.svg/320px-Hipages_logo.svg.png",
+    "alt": "hipages"
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    alt: "Amazon",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-    alt: "Google",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-    alt: "IBM",
-  },
+    "src": "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Gas_Safe_Register_logo.svg/320px-Gas_Safe_Register_logo.svg.png",
+    "alt": "Licensed & Insured"
+  }
 ];
 
 export const demoCustomers = demoLogos.map((l) => ({

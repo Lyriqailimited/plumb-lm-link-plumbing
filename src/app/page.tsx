@@ -1,358 +1,287 @@
-"use client";
-
-import { useEffect } from "react";
-
-// Heroes
-import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-import ShaderShowcase from "@/components/hero";
-import AnimatedShaderHero from "@/components/animated-shader-hero";
-
-// Backgrounds / decorative
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { Boxes } from "@/components/ui/background-boxes";
-import { Sparkles } from "@/components/ui/sparkles";
-import { GooeyText } from "@/components/ui/gooey-text-morphing";
-import { ParticleTextEffect } from "@/components/particle-text-effect";
-import { renderCanvas } from "@/components/ui/canvas";
-
-// Social proof / logos
-import { LogoCloud } from "@/components/logo-cloud-4";
-import { CustomersSection } from "@/components/ui/customers-section";
-import { InfiniteSlider } from "@/components/ui/infinite-slider";
-
-// Features / layout
-import FeatureSection from "@/components/stack-feature-section";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import StickyTabs from "@/components/ui/sticky-section-tabs";
-import ScrollAreaDemo from "@/components/scroll-area-1";
-import { Scroller } from "@/components/scroller-1";
-import { Spinner } from "@/components/spinner-1";
-
-// Pricing
-import { PricingSection } from "@/components/pricing";
-import { LoopsPricingSlider } from "@/components/pricing-slider-loops";
-import { PricingInteraction } from "@/components/ui/pricing-interaction";
-import { PricingCard } from "@/components/pricing-card-1";
-
-// Testimonials
+// Server component — no "use client" at top
+import dynamic from "next/dynamic";
 import { TestimonialsSection } from "@/components/testimonials-1";
-import { TestimonialsColumn } from "@/components/testimonials-columns-1";
-import { Component as BookTestimonial } from "@/components/3d-book-testimonial";
-import { TestimonialCarousel } from "@/components/ui/testimonial";
-
-// Footers
-import FooterSection from "@/components/footer";
 import Footer4Col from "@/components/footer-column";
-
-// Navigation (Aceternity demos)
-import NavbarDemo from "@/components/resizable-navbar-demo";
-import FloatingDockDemo from "@/components/floating-dock-demo";
-import SidebarDemo from "@/components/sidebar-demo";
-import FloatingNavDemo from "@/components/floating-navbar-demo";
-
-// Widget
-import VoiceWidget from "@/components/voice-widget";
-
-// Data
 import {
-  demoTestimonials,
-  demoLogos,
-  demoCustomers,
-  demoPlans,
-} from "@/lib/demo-data";
+  Phone, Clock, Shield, Star, CheckCircle,
+  Wrench, Droplets, Flame, Zap, Home, AlertTriangle, Bot, ChevronDown,
+} from "lucide-react";
 
-function SectionLabel({ title }: { title: string }) {
-  return (
-    <div className="mx-auto max-w-6xl px-6 pt-24 pb-4">
-      <div className="flex items-center gap-4">
-        <span className="h-px flex-1 bg-border" />
-        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          {title}
-        </span>
-        <span className="h-px flex-1 bg-border" />
-      </div>
-    </div>
-  );
-}
+const AnimatedShaderHero = dynamic(
+  () => import("@/components/animated-shader-hero"),
+  { ssr: false }
+);
+const LogoCloud = dynamic(
+  () => import("@/components/logo-cloud-4").then((m) => ({ default: m.LogoCloud })),
+  { ssr: false }
+);
+
+const COMPANY = process.env.NEXT_PUBLIC_COMPANY_NAME   || "Link Plumbing";
+const CITY    = process.env.NEXT_PUBLIC_COMPANY_CITY   || "Sydney";
+const PHONE   = "0412 056 027";
+const EMAIL   = "info@linkplumbing.com.au";
+const PRIMARY = process.env.NEXT_PUBLIC_PRIMARY_COLOR  || "#6EC1E4";
+const RATING  = process.env.NEXT_PUBLIC_REVIEWS_RATING || "4.9";
+const COUNT   = process.env.NEXT_PUBLIC_REVIEWS_COUNT  || "50";
+
+const LOGOS = [
+  { src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",                                              alt: "Google",     width: 80  },
+  { src: "https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg",                                                          alt: "Trustpilot", width: 100 },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Hipages_logo.svg/320px-Hipages_logo.svg.png",                 alt: "hipages",    width: 90  },
+];
+
+const TESTIMONIALS = [
+  { name: "Sarah M.", role: "Homeowner, Sydney", text: "Link Plumbing fixed our burst pipe at midnight. Fast, professional, and the price was exactly what they quoted. Highly recommend!", avatar: "https://randomuser.me/api/portraits/women/44.jpg", rating: 5 },
+  { name: "John T.",  role: "Homeowner, Sydney", text: "Blocked drain sorted within the hour. The technician was friendly and left the area spotless. Will definitely use again.",          avatar: "https://randomuser.me/api/portraits/men/32.jpg",   rating: 5 },
+  { name: "Emma R.",  role: "Homeowner, Sydney", text: "Hot water system replaced same day. Great communication and fair pricing. Five stars from me.",                                    avatar: "https://randomuser.me/api/portraits/women/68.jpg", rating: 5 },
+];
+
+const SERVICES = [
+  { icon: AlertTriangle, title: "Emergency Plumbing",   desc: "24/7 rapid response for burst pipes, major leaks, and plumbing emergencies across Sydney." },
+  { icon: Droplets,      title: "Blocked Drains",       desc: "Professional drain clearing with CCTV inspection. No mess, no guesswork."                  },
+  { icon: Flame,         title: "Hot Water Systems",    desc: "Same-day hot water repairs and replacements. All brands, all models."                       },
+  { icon: Wrench,        title: "General Plumbing",     desc: "Taps, toilets, pipes and fittings. Quality workmanship with an on-time guarantee."          },
+  { icon: Home,          title: "Residential Plumbing", desc: "Full residential plumbing for renovations, new builds, and ongoing maintenance."            },
+  { icon: Zap,           title: "Leak Detection",       desc: "Non-invasive electronic leak detection to find hidden leaks before they cause damage."      },
+];
+
+const FAQS = [
+  { q: "What areas do you cover?",         a: "We cover all of Sydney metro area including the CBD, Eastern Suburbs, North Shore, Western Sydney, and the Hills District." },
+  { q: "Do you offer emergency callouts?", a: "Yes — 24 hours a day, 7 days a week. Call 0412 056 027 for immediate dispatch."                                             },
+  { q: "Are you licensed and insured?",    a: "Fully licensed plumbers with $20M public liability insurance. All work is guaranteed."                                      },
+  { q: "Do you charge for quotes?",        a: "No. We provide free upfront quotes and confirm the price before any work begins — no surprises."                            },
+];
 
 export default function Page() {
-  useEffect(() => {
-    try {
-      renderCanvas();
-    } catch {
-      /* canvas element not mounted on this page */
-    }
-  }, []);
-
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
-      {/* Hero — Shape Landing */}
-      <HeroGeometric
-        badge="Lead Magnet"
-        title1="Capture leads"
-        title2="Around the clock"
-      />
+    <main className="min-h-screen bg-[#0a0a0a] text-white">
 
-      {/* Hero — Animated Shader */}
-      <SectionLabel title="Animated Shader Hero" />
-      <AnimatedShaderHero
-        headline={{ line1: "24/7 AI voice widget", line2: "Never miss a lead" }}
-        subtitle="Turn your website into a 24-hour sales rep that books appointments while you sleep."
-      />
-
-      {/* Hero — Shader Showcase */}
-      <SectionLabel title="Shader Showcase" />
-      <ShaderShowcase />
-
-      {/* Aurora Background */}
-      <SectionLabel title="Aurora Background" />
-      <AuroraBackground>
-        <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold">Beautiful aurora backgrounds</h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">
-            Add ambient motion to any section with a drop-in wrapper.
-          </p>
+      {/* Sticky Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+          <span className="text-xl font-bold tracking-tight" style={{ color: PRIMARY }}>
+            {COMPANY}
+          </span>
+          <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
+            <a href="#services" className="hover:text-white transition-colors">Services</a>
+            <a href="#reviews"  className="hover:text-white transition-colors">Reviews</a>
+            <a href="#faq"      className="hover:text-white transition-colors">FAQ</a>
+            <a href="#contact"  className="hover:text-white transition-colors">Contact</a>
+          </div>
+          <a
+            href={`tel:${PHONE.replace(/\s/g, "")}`}
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-[#0a0a0a] transition-opacity hover:opacity-90"
+            style={{ backgroundColor: PRIMARY }}
+          >
+            <Phone size={14} />
+            {PHONE}
+          </a>
         </div>
-      </AuroraBackground>
+      </nav>
 
-      {/* Background Boxes */}
-      <SectionLabel title="Background Boxes" />
-      <div className="relative h-[40rem] w-full overflow-hidden bg-slate-900 flex items-center justify-center">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <Boxes />
-        <h2 className="relative z-30 text-white text-3xl md:text-5xl font-bold">
-          Interactive backgrounds
-        </h2>
+      {/* Hero */}
+      <div className="pt-16">
+        <AnimatedShaderHero
+          trustBadge={{ text: `${RATING}\u2605 Google \u2022 ${COUNT}+ Reviews \u2022 24/7 Emergency` }}
+          headline={{ line1: "Sydney Emergency", line2: "Plumbers" }}
+          subtitle={`On-time guarantee \u2022 Upfront pricing \u2022 Licensed & Insured\nCall now: ${PHONE}`}
+          buttons={{
+            primary:   { text: "Book a Plumber" },
+            secondary: { text: `Call ${PHONE}`  },
+          }}
+        />
       </div>
 
-      {/* Sparkles */}
-      <SectionLabel title="Sparkles" />
-      <div className="relative h-96 w-full overflow-hidden bg-black flex items-center justify-center">
-        <Sparkles className="absolute inset-0 w-full h-full" color="#ffffff" density={500} />
-        <h2 className="relative z-10 text-white text-3xl md:text-5xl font-bold">
-          Sparkle over anything
-        </h2>
-      </div>
-
-      {/* Gooey Text */}
-      <SectionLabel title="Gooey Text Morphing" />
-      <div className="h-[30rem] flex items-center justify-center bg-background">
-        <GooeyText texts={["Capture", "Qualify", "Convert", "Book"]} />
-      </div>
-
-      {/* Particle Text */}
-      <SectionLabel title="Particle Text Effect" />
-      <div className="relative isolate w-full overflow-hidden bg-black [&>div]:!min-h-0 [&>div]:py-12">
-        <ParticleTextEffect words={["LEADS", "CALLS", "BOOKINGS", "24/7"]} />
-      </div>
-
-      {/* Infinite Slider */}
-      <SectionLabel title="Infinite Logo Slider" />
-      <div className="relative isolate w-full overflow-hidden bg-background py-12">
-        <InfiniteSlider gap={48} duration={40}>
-          {demoLogos.map((logo) => (
-            <img
-              key={logo.alt}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-8 w-auto dark:invert"
-            />
-          ))}
-        </InfiniteSlider>
-      </div>
-
-      {/* Logo Cloud */}
-      <SectionLabel title="Logo Cloud" />
-      <div className="relative isolate w-full overflow-hidden py-8">
-        <LogoCloud logos={demoLogos} />
-      </div>
-
-      {/* Customers Section */}
-      <CustomersSection customers={demoCustomers} />
-
-      {/* Stack Feature Section */}
-      <SectionLabel title="Feature Stack" />
-      <FeatureSection />
-
-      {/* Container Scroll */}
-      <SectionLabel title="Container Scroll Animation" />
-      <ContainerScroll
-        titleComponent={
-          <h1 className="text-4xl font-semibold">
-            Scroll-based <br />
-            <span className="text-4xl md:text-[6rem] font-bold leading-none">
-              Reveals
-            </span>
-          </h1>
-        }
-      >
-        <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-indigo-500 to-pink-500 rounded-xl">
-          <span className="text-white text-3xl font-bold">Your content here</span>
-        </div>
-      </ContainerScroll>
-
-      {/* Sticky Section Tabs */}
-      <SectionLabel title="Sticky Section Tabs" />
-      <StickyTabs>
-        <StickyTabs.Item id="1" title="Capture">
-          <p className="text-lg">AI voice widget greets visitors the moment they land.</p>
-        </StickyTabs.Item>
-        <StickyTabs.Item id="2" title="Qualify">
-          <p className="text-lg">Asks the right questions to filter quality leads.</p>
-        </StickyTabs.Item>
-        <StickyTabs.Item id="3" title="Book">
-          <p className="text-lg">Drops booked appointments straight into your calendar.</p>
-        </StickyTabs.Item>
-      </StickyTabs>
-
-      {/* Scroll Area + Scroller */}
-      <SectionLabel title="Scroll Area" />
-      <div className="flex justify-center py-8">
-        <ScrollAreaDemo />
-      </div>
-
-      <SectionLabel title="Scroller" />
-      <div className="mx-auto max-w-lg py-8">
-        <Scroller overflow="y" height={240} withButtons>
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className="p-4 border-b">
-              Scroll item #{i + 1}
+      {/* Trust strip */}
+      <section className="border-y border-white/10 bg-[#111111]">
+        <div className="max-w-5xl mx-auto px-4 py-5 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-sm">
+          {[
+            { icon: Clock,       label: "24/7 Emergency",          sub: "Always available"        },
+            { icon: Star,        label: `${RATING}\u2605 Google`,  sub: `${COUNT}+ reviews`       },
+            { icon: Shield,      label: "Licensed & Insured",       sub: "$20M public liability"   },
+            { icon: CheckCircle, label: "On-Time Guarantee",        sub: "Or we discount the job"  },
+          ].map(({ icon: Icon, label, sub }) => (
+            <div key={label} className="flex flex-col items-center gap-1">
+              <Icon size={20} style={{ color: PRIMARY }} />
+              <span className="font-semibold text-white">{label}</span>
+              <span className="text-white/50 text-xs">{sub}</span>
             </div>
           ))}
-        </Scroller>
-      </div>
+        </div>
+      </section>
 
-      {/* Spinner */}
-      <SectionLabel title="Spinner" />
-      <div className="flex justify-center py-8">
-        <Spinner size={32} />
-      </div>
+      {/* Logo Cloud */}
+      <section className="bg-[#0d0d0d] py-8">
+        <p className="text-center text-xs uppercase tracking-widest text-white/40 mb-4">
+          Trusted by Sydney homeowners &amp; verified on
+        </p>
+        <LogoCloud logos={LOGOS} />
+      </section>
 
-      {/* Pricing — Section */}
-      <SectionLabel title="Pricing" />
-      <PricingSection
-        heading="Plans that scale with you"
-        description="Simple pricing. Cancel anytime."
-        plans={demoPlans}
-      />
+      {/* Services */}
+      <section id="services" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span
+              className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+              style={{ backgroundColor: `${PRIMARY}22`, color: PRIMARY }}
+            >
+              What We Do
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              {CITY} Plumbing Services
+            </h2>
+            <p className="mt-3 text-white/60 max-w-xl mx-auto">
+              From burst pipes at 2am to routine maintenance, Link Plumbing covers every job with the same upfront pricing and on-time guarantee.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {SERVICES.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-white/10 bg-[#111111] p-6 hover:border-[#6EC1E4]/40 transition-all duration-200"
+              >
+                <div
+                  className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
+                  style={{ backgroundColor: `${PRIMARY}20` }}
+                >
+                  <Icon size={20} style={{ color: PRIMARY }} />
+                </div>
+                <h3 className="mb-2 font-semibold text-white">{title}</h3>
+                <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Pricing — Card */}
-      <SectionLabel title="Pricing Card" />
-      <div className="mx-auto max-w-md px-6 py-12">
-        <PricingCard
-          title="Pro"
-          price="$79"
-          priceDescription="per month"
-          description="Everything you need to scale your voice AI widget."
-          features={[
-            "Unlimited calls",
-            "Custom voice + brand",
-            "CRM integration",
-            "Priority support",
-          ]}
-          buttonText="Start free trial"
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 border-y border-white/10 bg-[#0d0d0d]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
+            Why {CITY} Homeowners Choose Us
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "On-Time Guarantee", body: "We arrive in the window we promise, or we discount the job. Your time is valuable."     },
+              { title: "Upfront Pricing",   body: "You see the full price before we start. No hidden fees, no surprise invoices."           },
+              { title: "Fully Licensed",    body: "All technicians are licensed plumbers carrying $20M public liability insurance."         },
+            ].map(({ title, body }) => (
+              <div key={title} className="flex gap-4">
+                <div className="mt-1 h-5 w-1 flex-none rounded-full" style={{ backgroundColor: PRIMARY }} />
+                <div>
+                  <h3 className="font-semibold text-white mb-1">{title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="reviews" className="py-20 bg-[#0a0a0a]">
+        <TestimonialsSection
+          badgeText="Customer Reviews"
+          title={`What ${CITY} Homeowners Say`}
+          subtitle={`${RATING} stars across ${COUNT}+ verified Google reviews.`}
+          testimonials={TESTIMONIALS}
         />
-      </div>
+      </section>
 
-      {/* Pricing — Slider */}
-      <SectionLabel title="Pricing Slider" />
-      <LoopsPricingSlider />
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-4 bg-[#0d0d0d]">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <span
+              className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+              style={{ backgroundColor: `${PRIMARY}22`, color: PRIMARY }}
+            >
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold">Common Questions</h2>
+          </div>
+          <div className="space-y-3">
+            {FAQS.map(({ q, a }) => (
+              <details
+                key={q}
+                className="group rounded-xl border border-white/10 bg-[#111111] px-5 py-4 open:border-[#6EC1E4]/30"
+              >
+                <summary className="flex cursor-pointer items-center justify-between font-medium text-white list-none select-none">
+                  {q}
+                  <ChevronDown size={16} className="flex-none text-white/40 transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-sm text-white/60 leading-relaxed">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Pricing — Interaction */}
-      <SectionLabel title="Pricing Interaction" />
-      <div className="flex justify-center py-12">
-        <PricingInteraction
-          starterMonth={29}
-          starterAnnual={24}
-          proMonth={79}
-          proAnnual={59}
-        />
-      </div>
+      {/* AI Receptionist callout */}
+      <section className="py-16 px-4 bg-[#0a0a0a]">
+        <div className="max-w-2xl mx-auto">
+          <div className="rounded-2xl border-l-4 bg-[#111111] p-7" style={{ borderColor: PRIMARY }}>
+            <div className="flex items-start gap-4">
+              <div
+                className="mt-0.5 flex h-10 w-10 flex-none items-center justify-center rounded-xl"
+                style={{ backgroundColor: `${PRIMARY}20` }}
+              >
+                <Bot size={20} style={{ color: PRIMARY }} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-1">Meet Your AI Receptionist</h3>
+                <p className="text-sm text-white/60 leading-relaxed">
+                  Available 24/7, our AI receptionist can answer questions, provide estimates, and book
+                  appointments instantly &mdash; no hold music.
+                </p>
+                <p className="mt-3 text-xs text-white/40">
+                  Tap the button at the bottom-right corner to get started.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* Testimonials — Cards */}
-      <TestimonialsSection
-        title="Loved by service businesses"
-        subtitle="Real results from real operators."
-        badgeText="Testimonials"
-        testimonials={demoTestimonials}
-      />
+      {/* Emergency CTA */}
+      <section id="contact" className="py-16 px-4 bg-[#0d0d0d] border-t border-white/10">
+        <div className="max-w-3xl mx-auto text-center">
+          <span
+            className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+            style={{ backgroundColor: `${PRIMARY}22`, color: PRIMARY }}
+          >
+            24/7 Emergency
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Plumbing Emergency?<br />
+            <span style={{ color: PRIMARY }}>We&apos;re Ready Right Now.</span>
+          </h2>
+          <p className="text-white/60 mb-8 max-w-lg mx-auto">
+            Burst pipe, blocked drain, no hot water &mdash; call now for rapid dispatch across {CITY}.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`tel:${PHONE.replace(/\s/g, "")}`}
+              className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-[#0a0a0a] hover:opacity-90 transition-opacity shadow-lg"
+              style={{ backgroundColor: PRIMARY }}
+            >
+              <Phone size={18} />
+              Call {PHONE}
+            </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white border border-white/20 hover:border-white/40 transition-colors"
+            >
+              {EMAIL}
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Testimonials — Columns */}
-      <SectionLabel title="Testimonials Columns" />
-      <div className="flex justify-center gap-6 py-12 overflow-hidden max-h-[600px]">
-        <TestimonialsColumn
-          testimonials={demoTestimonials.map((t) => ({
-            text: t.text,
-            image: t.image,
-            name: t.name,
-            role: t.role,
-          }))}
-          duration={15}
-        />
-        <TestimonialsColumn
-          className="hidden md:block"
-          testimonials={demoTestimonials.map((t) => ({
-            text: t.text,
-            image: t.image,
-            name: t.name,
-            role: t.role,
-          }))}
-          duration={19}
-        />
-      </div>
-
-      {/* Testimonials — 3D Book */}
-      <SectionLabel title="3D Book Testimonials" />
-      <BookTestimonial
-        testimonials={demoTestimonials.map((t) => ({
-          image: t.avatar,
-          text: t.text,
-          name: t.name,
-          jobtitle: t.jobtitle,
-          rating: t.rating,
-        }))}
-      />
-
-      {/* Testimonials — Carousel */}
-      <SectionLabel title="Testimonial Carousel" />
-      <div className="flex justify-center py-12">
-        <TestimonialCarousel
-          testimonials={demoTestimonials.map((t) => ({
-            id: t.id,
-            name: t.name,
-            avatar: t.avatar,
-            description: t.description,
-          }))}
-        />
-      </div>
-
-      {/* Navigation — Resizable Navbar */}
-      <SectionLabel title="Resizable Navbar" />
-      <NavbarDemo />
-
-      {/* Navigation — Floating Dock */}
-      <SectionLabel title="Floating Dock" />
-      <FloatingDockDemo />
-
-      {/* Navigation — Sidebar */}
-      <SectionLabel title="Sidebar" />
-      <div className="px-6 py-8">
-        <SidebarDemo />
-      </div>
-
-      {/* Navigation — Floating Navbar */}
-      <SectionLabel title="Floating Navbar" />
-      <FloatingNavDemo />
-
-      {/* Footers */}
-      <SectionLabel title="Footer Column" />
+      {/* Footer */}
       <Footer4Col />
 
-      <SectionLabel title="Footer" />
-      <FooterSection />
-
-      {/* Voice Widget */}
-      <VoiceWidget />
     </main>
   );
 }

@@ -15,9 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AI Voice Assistant — Lead Magnet Showcase",
-  description:
-    "High-converting lead magnet landing page with AI voice widget, built with Next.js and 21st.dev components.",
+  title: "Link Plumbing — Sydney Plumbers",
+  description: "Local Sydney plumbers with an on-time guarantee and honest upfront pricing.",
 };
 
 export default function RootLayout({

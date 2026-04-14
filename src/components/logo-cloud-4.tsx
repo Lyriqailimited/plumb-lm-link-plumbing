@@ -1,3 +1,4 @@
+"use client";
 /**
  * @component LogoCloud
  * @category Logo cloud
