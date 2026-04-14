@@ -1,3 +1,10 @@
+/**
+ * @component Scroller
+ * @category UI primitive
+ * @description A horizontally or vertically scrollable container with optional arrow buttons that appear at edges when overflow is present.
+ * @usage Use to wrap overflowing content (galleries, tag lists, code blocks) where you want arrow-button navigation in addition to scroll.
+ * @props children, overflow ("x"|"y"|"both"), height, width, withButtons, childrenContainerClassName.
+ */
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/button-1";
 import clsx from "clsx";

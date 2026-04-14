@@ -1,3 +1,10 @@
+/**
+ * @component Canvas (network lines)
+ * @category Animation/Visual effect
+ * @description A canvas-based animated network of oscillating flowing lines/nodes, producing a fluid aurora/wave effect in the background.
+ * @usage Use as a generative decorative backdrop for hero sections, dark-mode pages, or "AI/data" themed visuals.
+ * @props Canvas render props; configurable oscillator frequency/amplitude and line node counts in-file.
+ */
 class Oscillator {
   phase: number;
   offset: number;

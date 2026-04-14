@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Sparkles
+ * @category Animation/Visual effect
+ * @description A tsparticles-powered sparkles/starfield background with configurable size, speed, density, opacity, and color.
+ * @usage Use behind hero headlines, CTAs, or modals to add a subtle twinkling particle layer.
+ * @props size, minSize, density, speed, minSpeed, opacity, opacitySpeed, minOpacity, color, background, className, options.
+ */
 import { useEffect, useId, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"

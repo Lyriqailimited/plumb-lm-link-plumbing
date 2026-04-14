@@ -1,3 +1,10 @@
+/**
+ * @component TestimonialCarousel
+ * @category Testimonial
+ * @description A draggable (swipeable) single-card testimonial carousel with optional arrow buttons and dot indicators, using framer-motion gestures.
+ * @usage Use when you want one-at-a-time testimonial browsing with mobile-friendly swipe + desktop arrow/dot navigation.
+ * @props testimonials (array with id/name/avatar/description), showArrows, showDots.
+ */
 import * as React from "react"
 import { motion, PanInfo } from "framer-motion"
 import { cn } from "@/lib/utils"

@@ -1,4 +1,11 @@
 'use client';
+/**
+ * @component AnimatedGroup
+ * @category Animation/Visual effect
+ * @description A framer-motion wrapper that staggers child animations using built-in presets (fade, slide, scale, blur, zoom, flip, bounce, rotate, swing).
+ * @usage Use to wrap any group of elements (lists, hero text lines, card grids) that should animate in sequentially on mount.
+ * @props children, preset, variants override, transition, as (polymorphic tag), className.
+ */
 import { ReactNode } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';

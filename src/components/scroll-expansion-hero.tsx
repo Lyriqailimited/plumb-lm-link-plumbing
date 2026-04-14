@@ -1,5 +1,11 @@
 'use client';
-
+/**
+ * @component ScrollExpandMedia
+ * @category Hero section
+ * @description A scroll-driven hero that expands a center video/image from small to full-width as the user scrolls, with overlaying title/date text.
+ * @usage Use as an immersive top-of-page hero for product launches or editorial pages where you want a cinematic scroll-to-expand reveal.
+ * @props mediaType, mediaSrc, posterSrc, bgImageSrc, title, date, scrollToExpand label, textBlend, children.
+ */
 import {
   useEffect,
   useRef,

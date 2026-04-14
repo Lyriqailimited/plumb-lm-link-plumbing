@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component RetroTestimonial
+ * @category Testimonial
+ * @description A horizontal-scroll testimonial carousel with click-to-expand modal cards featuring quotes, names, and profile images in a retro layout.
+ * @usage Use as a testimonial showcase when you want an interactive, scrollable row of customer cards that can open full-quote modals.
+ * @props testimonials (iTestimonial[]: name, designation, description, profileImage); carousel accepts initialScroll.
+ */
 import React, {useEffect, useRef, useState} from "react";
 
 import Image from "next/image";

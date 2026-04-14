@@ -1,5 +1,11 @@
 'use client';
-
+/**
+ * @component Dialog
+ * @category UI primitive
+ * @description The shadcn/ui Dialog family (Root, Trigger, Content, Header, Footer, Title, Description, Close) — an accessible modal built on Radix Dialog.
+ * @usage Use for modal flows: confirmations, forms, detail views, lightboxes. Compose via named subcomponents.
+ * @props Root controls open state (open, onOpenChange); Content supports className + overlay.
+ */
 import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';

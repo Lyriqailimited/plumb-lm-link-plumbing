@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Popover
+ * @category UI primitive
+ * @description The shadcn/ui Popover primitive (Root, Trigger, Content) built on Radix Popover — a floating panel anchored to a trigger.
+ * @usage Use for dropdowns, filter menus, account widgets, color pickers, or any inline-anchored overlay.
+ * @props Content: align, sideOffset, className.
+ */
 import * as React from "react"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
 

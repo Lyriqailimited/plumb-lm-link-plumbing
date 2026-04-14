@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component VoiceWidget
+ * @category Navigation
+ * @description A floating voice-call widget that opens an iframe overlay (bottom-right) with a phone-call CTA and minimize/close behavior.
+ * @usage Use as a persistent site-wide chat/voice assistant launcher; auto-opens on mount and listens for postMessage minimize events.
+ * @props None; uses WIDGET_URL and COMPANY_NAME from @/lib/demo-data.
+ */
 import { useState, useEffect } from "react";
 import { PhoneCall } from "lucide-react";
 import { WIDGET_URL, COMPANY_NAME } from "@/lib/demo-data";

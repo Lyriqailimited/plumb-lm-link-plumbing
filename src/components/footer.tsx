@@ -1,3 +1,10 @@
+/**
+ * @component Footer
+ * @category Footer
+ * @description A compact footer with main nav links, generic social icons, and copyright line.
+ * @usage Use as a minimal site footer on landing pages where a small link bar plus social row is enough (no columns).
+ * @props None; nav `links` array and social URLs are defined in-file.
+ */
 import Link from 'next/link'
 
 // Import generic icons from lucide-react

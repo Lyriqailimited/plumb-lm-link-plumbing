@@ -1,5 +1,11 @@
-"use client" 
-
+"use client"
+/**
+ * @component StickyTabs
+ * @category Navigation
+ * @description A sectioned page layout where each section has a sticky header title tab, providing an in-page navigation feel as the user scrolls.
+ * @usage Use for long marketing or docs pages where you want anchor-like sticky titles on each major section (Features, Pricing, FAQ, etc.).
+ * @props children (StickyTabs.Item list), mainNavHeight, and className overrides for each layer of the structure.
+ */
 import React, { Children, isValidElement } from 'react';
 import clsx from 'clsx';
 

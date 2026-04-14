@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Checkbox
+ * @category UI primitive
+ * @description The shadcn/ui Checkbox wrapping Radix CheckboxPrimitive with a small square box and animated check icon.
+ * @usage Use in forms, settings panels, terms-of-service opt-ins, and anywhere a binary selection is needed.
+ * @props Standard Radix Checkbox props (checked, onCheckedChange, disabled); className for custom sizing.
+ */
 import * as React from "react"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { Check } from "lucide-react"

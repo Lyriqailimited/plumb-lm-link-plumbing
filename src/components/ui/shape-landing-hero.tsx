@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component ShapeLandingHero
+ * @category Hero section
+ * @description A dark hero featuring floating elegant gradient shapes (rotated blurred bars) animated in with framer-motion behind a centered headline.
+ * @usage Use as a stylish landing hero with subtle shape-based motion and gradient lighting — fits premium/agency/tech brands.
+ * @props ElegantShape accepts delay, width, height, rotate, gradient, className.
+ */
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";

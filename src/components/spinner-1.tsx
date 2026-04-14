@@ -1,3 +1,10 @@
+/**
+ * @component Spinner
+ * @category UI primitive
+ * @description A 12-bar rotating loading spinner rendered from inline div bars with configurable size and color.
+ * @usage Use as a loading indicator inside buttons, overlays, or empty states; the Button-1 component consumes this for its loading state.
+ * @props size (px, default 20), color (CSS color).
+ */
 import React from "react";
 
 interface SpinnerProps {

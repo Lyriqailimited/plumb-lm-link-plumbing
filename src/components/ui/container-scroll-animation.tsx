@@ -1,4 +1,11 @@
 "use client";
+/**
+ * @component ContainerScroll
+ * @category Animation/Visual effect
+ * @description A scroll-driven 3D tilting container that flattens and scales as the user scrolls, with a title component that fades up (Aceternity-style "MacBook reveal").
+ * @usage Use to dramatically reveal a product screenshot, video, or demo mockup below a hero headline as the user scrolls down.
+ * @props titleComponent (ReactNode shown above), children (the rotating card content).
+ */
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 

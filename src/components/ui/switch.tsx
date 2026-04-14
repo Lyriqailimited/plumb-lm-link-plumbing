@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Switch
+ * @category UI primitive
+ * @description The shadcn/ui Switch wrapping Radix Switch — a toggle with a pill background and animated thumb.
+ * @usage Use for binary on/off settings, pricing billing-period toggles (monthly/yearly), feature flags, and preference panels.
+ * @props Standard Radix Switch props (checked, onCheckedChange, disabled), className.
+ */
 import * as React from "react"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
 

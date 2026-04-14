@@ -1,3 +1,10 @@
+/**
+ * @component Card
+ * @category UI primitive
+ * @description The shadcn/ui Card family: Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter — a bordered, rounded container system.
+ * @usage Use to group related content in sections (pricing tiers, feature blocks, dashboard widgets, testimonials) with consistent spacing and borders.
+ * @props Standard div props; compose via the named subcomponents.
+ */
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

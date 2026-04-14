@@ -1,3 +1,10 @@
+/**
+ * @component TestimonialsSection
+ * @category Testimonial
+ * @description A classic 3-column testimonials grid section with a badge, headline, subtitle, and starred customer cards (name, role, avatar, text).
+ * @usage Use as the standard "what our customers say" section on a marketing landing page when you want a static, scannable layout.
+ * @props title, subtitle, badgeText, testimonials (array of { name, role, text, avatar, rating? }).
+ */
 import { Card, CardHeader, CardFooter, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 

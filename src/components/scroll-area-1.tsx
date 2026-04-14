@@ -1,3 +1,10 @@
+/**
+ * @component ScrollAreaDemo
+ * @category UI primitive
+ * @description A demo/example of the ScrollArea primitive showing a scrollable list of version tags separated by dividers.
+ * @usage Use as a reference/example for building vertical scrolling lists with a fixed height and styled scrollbar.
+ * @props None; tags list generated inline.
+ */
 import * as React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 

@@ -1,4 +1,11 @@
 "use client";
+/**
+ * @component TextHoverEffect
+ * @category Animation/Visual effect
+ * @description An SVG text component that reveals a colorful gradient stroke that follows the user's cursor inside the text.
+ * @usage Use as a large decorative headline or footer brand mark where you want interactive hover-tracking color reveal on a word/phrase.
+ * @props text (string, required), duration (animation speed), className.
+ */
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";

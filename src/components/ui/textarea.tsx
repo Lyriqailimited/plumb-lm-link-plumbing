@@ -1,3 +1,10 @@
+/**
+ * @component Textarea
+ * @category UI primitive
+ * @description The shadcn/ui Textarea — a styled native multi-line textarea with consistent focus ring and disabled state.
+ * @usage Use for multi-line form inputs: contact messages, bio/description fields, feedback forms, comment boxes.
+ * @props Standard HTML textarea attributes plus className.
+ */
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

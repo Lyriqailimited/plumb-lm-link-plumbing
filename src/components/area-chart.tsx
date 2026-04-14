@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component AreaChart
+ * @category UI primitive
+ * @description A responsive visx-based area chart with animated gradient fill, hover tooltip tracking, axes, and grid lines.
+ * @usage Use inside dashboards or analytics sections to visualize time-series metrics (signups, revenue, usage) with smooth interactions.
+ * @props data (series config), children slots (Chart, Axis, Tooltip, etc.); supports motion animations via motion/react.
+ */
 import { localPoint } from "@visx/event";
 import { curveMonotoneX } from "@visx/curve";
 import { GridColumns, GridRows } from "@visx/grid";

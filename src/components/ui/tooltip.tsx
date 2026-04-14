@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Tooltip
+ * @category UI primitive
+ * @description The shadcn/ui Tooltip family (Provider, Root, Trigger, Content) built on Radix — small hover/focus hint overlays.
+ * @usage Wrap the app (or a section) in TooltipProvider, then use Tooltip/Trigger/Content around icons, truncated text, or feature explanations.
+ * @props Content: sideOffset, className; standard Radix Tooltip props.
+ */
 import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 

@@ -1,4 +1,11 @@
 'use client';
+/**
+ * @component InfiniteSlider
+ * @category Animation/Visual effect
+ * @description A horizontal/vertical infinite marquee slider that loops children continuously, with optional pause/slow-down on hover.
+ * @usage Use for logo clouds, testimonial tickers, or feature ribbons that should scroll endlessly.
+ * @props children, gap, duration, durationOnHover, direction ("horizontal"|"vertical"), reverse, className.
+ */
 import { cn } from '@/lib/utils';
 import { useMotionValue, animate, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';

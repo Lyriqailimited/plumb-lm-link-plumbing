@@ -1,4 +1,11 @@
 "use client";
+/**
+ * @component BackgroundBoxes
+ * @category Animation/Visual effect
+ * @description A grid of 150x100 animated boxes that flash pastel colors on hover, rendered in a skewed/tilted perspective.
+ * @usage Use as a decorative background layer behind hero text or CTAs for a playful, interactive grid effect.
+ * @props className to style the container/positioning.
+ */
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";

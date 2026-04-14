@@ -1,3 +1,10 @@
+/**
+ * @component LogoCloud
+ * @category Logo cloud
+ * @description A horizontally scrolling infinite logo marquee with edge progressive blur fades, showing partner/customer brand marks.
+ * @usage Use as a "trusted by" / "as seen in" strip beneath the hero to display social proof via partner logos.
+ * @props logos (array of { src, alt, width?, height? }).
+ */
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 

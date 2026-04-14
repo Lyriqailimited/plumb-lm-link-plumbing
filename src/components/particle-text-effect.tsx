@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component ParticleTextEffect
+ * @category Animation/Visual effect
+ * @description A canvas-based particle system that animates particles to form text shapes, cycling through provided words with colored flocking motion.
+ * @usage Use as an eye-catching hero banner, splash screen, or section divider when you want animated text built from moving particles.
+ * @props words (string[]) for the cycling text list (see component for full prop list).
+ */
 import { useEffect, useRef } from "react"
 
 interface Vector2D {

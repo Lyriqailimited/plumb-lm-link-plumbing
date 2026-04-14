@@ -1,3 +1,10 @@
+/**
+ * @component FooterColumn
+ * @category Footer
+ * @description A multi-column site footer with services, about, help, and contact info plus social icons and address block.
+ * @usage Use at the bottom of marketing/landing pages that need a detailed, link-rich footer with multiple navigation columns and contact details.
+ * @props No props; content is defined in the internal `data` object (edit in file to customize links/info).
+ */
 import {
   Dribbble,
   Facebook,

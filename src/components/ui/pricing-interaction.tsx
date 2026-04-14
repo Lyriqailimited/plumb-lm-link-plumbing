@@ -1,3 +1,10 @@
+/**
+ * @component PricingInteraction
+ * @category Pricing
+ * @description An interactive 2-tier (Starter/Pro) pricing UI with plan and monthly/annual period toggles, animated via NumberFlow for smooth price transitions.
+ * @usage Use as a compact, interactive pricing widget when you want animated number changes between two plans and two billing periods.
+ * @props starterMonth, starterAnnual, proMonth, proAnnual (numbers, required).
+ */
 import NumberFlow from '@number-flow/react'
 import React from "react";
 

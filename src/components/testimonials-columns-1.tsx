@@ -1,4 +1,11 @@
 "use client";
+/**
+ * @component TestimonialsColumn
+ * @category Testimonial
+ * @description A vertically auto-scrolling column of testimonial cards (infinite loop via framer-motion) useful for multi-column testimonial walls.
+ * @usage Use multiple instances side-by-side (with differing durations) to create a layered, constantly moving testimonials wall section.
+ * @props testimonials (array of { text, image, name, role }), duration, className.
+ */
 import React from "react";
 import { motion } from "motion/react";
 

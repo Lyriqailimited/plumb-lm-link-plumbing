@@ -1,3 +1,10 @@
+/**
+ * @component PricingSliderLoops
+ * @category Pricing
+ * @description An interactive usage-based pricing slider where users drag to pick subscriber count and see the matching monthly price tier.
+ * @usage Use for usage/volume-based pricing pages (e.g., newsletter, SaaS with tiered scale) where customers should explore cost vs. scale.
+ * @props None; breakpoints defined by PRICING_BREAKPOINTS and BREAKPOINT_SUB_VALUES constants in-file.
+ */
 import React, { useState } from "react";
 // Utility for class merging available via @/lib/utils if needed
 

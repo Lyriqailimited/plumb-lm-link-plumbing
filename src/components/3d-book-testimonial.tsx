@@ -1,4 +1,11 @@
 'use client'
+/**
+ * @component BookTestimonial
+ * @category Testimonial
+ * @description A 3D flip-book testimonial component that presents customer quotes as pages you can turn like a physical book.
+ * @usage Use as a novel, high-engagement testimonial section for storytelling-style brands; works on both desktop (two-page) and mobile (single-page) layouts.
+ * @props testimonials (array of { image?, text, name, jobtitle, rating }).
+ */
 import React from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { useMediaQuery } from '@react-hook/media-query';

@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component StackFeatureSection
+ * @category Feature section
+ * @description A "tech stack" / logo-grid feature section showcasing brand icons (React, AWS, Next.js, etc.) with headline and CTA.
+ * @usage Use to highlight the technologies/integrations your product supports, typically mid-page after the hero.
+ * @props None; icons and layout configured inline via iconConfigs array.
+ */
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {

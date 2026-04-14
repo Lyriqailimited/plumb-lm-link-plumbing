@@ -1,4 +1,11 @@
 'use client';
+/**
+ * @component ProgressiveBlur
+ * @category Animation/Visual effect
+ * @description A stacked layered-blur gradient overlay that fades content into the background from a chosen direction (top/right/bottom/left).
+ * @usage Use as edge masks for marquees/sliders (logo clouds, testimonial tickers) or to fade scrollable areas into their container.
+ * @props direction, blurLayers, blurIntensity, className, plus motion div props.
+ */
 import { cn } from '@/lib/utils';
 import { HTMLMotionProps, motion } from 'motion/react';
 

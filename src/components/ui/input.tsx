@@ -1,3 +1,10 @@
+/**
+ * @component Input
+ * @category UI primitive
+ * @description The shadcn/ui Input — a styled native input with border, ring focus, and file-input support.
+ * @usage Use for all single-line form fields (email, name, search, numbers). Pair with Label and form validation.
+ * @props Standard HTML input attributes plus className.
+ */
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

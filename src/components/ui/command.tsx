@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Command
+ * @category UI primitive
+ * @description The shadcn/ui Command palette built on cmdk with Dialog, Input, List, Empty, Group, Item, and Separator subcomponents.
+ * @usage Use to build Cmd+K / quick-search menus, combobox-style pickers, or keyboard-first action launchers.
+ * @props Standard cmdk props; CommandDialog wraps in a Radix Dialog for modal usage.
+ */
 import * as React from "react"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"

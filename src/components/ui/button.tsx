@@ -1,3 +1,10 @@
+/**
+ * @component Button
+ * @category UI primitive
+ * @description The shadcn/ui Button built on Radix Slot with CVA variants (default, destructive, outline, secondary, ghost, link) and sizes (sm, default, lg, icon).
+ * @usage Use as the standard button across the app (CTAs, form submits, toolbars). Pass `asChild` to render a child element (like Next.js Link) styled as a button.
+ * @props variant, size, asChild, plus all native button props.
+ */
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"

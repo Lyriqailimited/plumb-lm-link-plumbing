@@ -1,3 +1,10 @@
+/**
+ * @component Button
+ * @category UI primitive
+ * @description A Vercel-style button primitive with size, shape, and variant options (primary, secondary, tertiary, error, warning) plus loading spinner support.
+ * @usage Use anywhere a customizable styled button is needed beyond the shadcn Button; e.g., toolbars, forms, CTA groups that require size/shape control (square vs rounded) and built-in loading state.
+ * @props size (tiny|small|medium|large), shape (square|rounded|circle), type (variant), loading, prefix/suffix icons.
+ */
 import React from "react";
 import { Spinner } from "@/components/spinner-1";
 import clsx from "clsx";

@@ -1,3 +1,10 @@
+/**
+ * @component AnimatedShaderHero (canvas version)
+ * @category Hero section
+ * @description A hero section driven by a custom canvas shader background with trust badge, two-line headline, subtitle, and primary/secondary CTA buttons.
+ * @usage Use at the top of a landing page when you want a vivid animated backdrop behind the main headline and conversion CTAs.
+ * @props trustBadge, headline (line1/line2), subtitle, buttons (primary/secondary onClick handlers), className.
+ */
 import React, { useRef, useEffect } from 'react';
 
 // Types for component props

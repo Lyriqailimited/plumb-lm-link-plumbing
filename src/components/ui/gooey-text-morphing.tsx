@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component GooeyText
+ * @category Animation/Visual effect
+ * @description A text component that morphs between an array of strings using SVG gooey filter blending for a liquid transition effect.
+ * @usage Use as a kinetic hero headline or section accent where you want text to fluidly morph between several keywords/taglines.
+ * @props texts (string[] required), morphTime, cooldownTime, className, textClassName.
+ */
 import * as React from "react";
 import { cn } from "@/lib/utils";
 

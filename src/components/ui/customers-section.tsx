@@ -1,3 +1,10 @@
+/**
+ * @component CustomersSection
+ * @category Logo cloud
+ * @description A "trusted by" section with headline, CTA link, and a grid of customer logos animated in via AnimatedGroup (blur + spring).
+ * @usage Use below a hero or above pricing to display social proof through customer logos with a polished entrance animation.
+ * @props logos (CustomerLogo[]: src, alt, height); plus typical heading/link content customized in-file.
+ */
 import React from "react"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"

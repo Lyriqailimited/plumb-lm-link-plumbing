@@ -1,4 +1,11 @@
 'use client';
+/**
+ * @component Pricing
+ * @category Pricing
+ * @description An animated pricing section with monthly/yearly frequency switch, featured-plan highlight, tooltips on features, and motion transitions.
+ * @usage Use as the primary pricing block on a SaaS marketing page when you want a polished, animated plan comparison with star-highlighted recommended tier.
+ * @props plans array (name, info, price.monthly/yearly, features with optional tooltip, btn, highlighted flag).
+ */
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import {

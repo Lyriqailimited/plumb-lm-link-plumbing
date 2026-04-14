@@ -1,3 +1,10 @@
+/**
+ * @component PricingCard
+ * @category Pricing
+ * @description A glass-morphism pricing card composed of Card/Header/Body subcomponents with a blurred background and border.
+ * @usage Use inside a pricing grid/section when you want a subtle frosted card look for plan tiers (Starter/Pro/Enterprise).
+ * @props className overrides; glassEffect flag on Header; composes via Card.Header / Card.Body slots.
+ */
 import React from 'react';
 import { cn } from '@/lib/utils';
 

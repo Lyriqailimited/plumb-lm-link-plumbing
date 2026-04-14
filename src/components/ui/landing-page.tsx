@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component LandingPage
+ * @category Hero section
+ * @description A full landing-page composition including navigation, hero, feature blocks, contact form, and footer with framer-motion animations and mobile menu.
+ * @usage Use as a ready-made complete landing page template; copy or compose the inner sections individually into your own routes.
+ * @props None; content/links hard-coded inline (edit in file or refactor to accept data props).
+ */
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"

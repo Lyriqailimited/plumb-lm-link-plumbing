@@ -1,4 +1,11 @@
 "use client"
+/**
+ * @component Hero (AnimatedShader)
+ * @category Hero section
+ * @description A dark, premium hero using paper-design shader meshes with glass/gooey SVG filters, pulsing border, and framer-motion entry animations.
+ * @usage Use as a flagship hero for launch pages, AI products, or design-forward brands that need a modern shader-driven visual.
+ * @props None; content is hard-coded inline (edit in file to customize headline/CTAs).
+ */
 import { useRef } from "react"
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"

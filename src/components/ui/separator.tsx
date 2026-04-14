@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component Separator
+ * @category UI primitive
+ * @description The shadcn/ui Separator primitive (Radix) — a thin horizontal or vertical divider line.
+ * @usage Use to visually separate sections within cards, menus, lists, or headers.
+ * @props orientation ("horizontal"|"vertical"), decorative (bool), className.
+ */
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 

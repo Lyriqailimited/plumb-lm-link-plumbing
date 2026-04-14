@@ -1,5 +1,11 @@
 "use client"
-
+/**
+ * @component ScrollArea
+ * @category UI primitive
+ * @description The shadcn/ui ScrollArea wrapping Radix ScrollArea — a styled scroll container with a custom themed scrollbar.
+ * @usage Use anywhere you need a fixed-height scrollable region with consistent, styled scrollbars (sidebars, command lists, long card lists).
+ * @props Root accepts className; ScrollBar supports orientation ("vertical"|"horizontal").
+ */
 import * as React from "react"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 

@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component TestimonialCard (stacked/draggable)
+ * @category Testimonial
+ * @description A stacked-deck testimonial card (front/middle/back) that rotates and can be dragged to shuffle to the next quote.
+ * @usage Use as a compact interactive testimonial widget where visitors can flip through customer quotes by dragging the top card.
+ * @props handleShuffle, testimonial (string), position ("front"|"middle"|"back"), id, author.
+ */
 import * as React from 'react';
 import { motion } from 'framer-motion';
 

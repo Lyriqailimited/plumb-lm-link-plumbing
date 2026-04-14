@@ -1,3 +1,10 @@
+/**
+ * @component PricingCard1
+ * @category Pricing
+ * @description An animated single pricing card with hover spring lift, feature list, optional image, and a unique/featured style variant.
+ * @usage Use as a single-tier pricing offer card or as one item inside a custom pricing grid; the isUnique flag gives a visually distinct "contact/request" variant.
+ * @props title, price, priceDescription, description, features[], buttonText, imageSrc, imageAlt, isUnique, className.
+ */
 import * as React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";

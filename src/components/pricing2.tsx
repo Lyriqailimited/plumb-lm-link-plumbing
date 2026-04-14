@@ -1,5 +1,11 @@
 "use client";
-
+/**
+ * @component Pricing2
+ * @category Pricing
+ * @description A pricing section with monthly/yearly toggle switch and a grid of plan cards showing features and CTA buttons.
+ * @usage Use as the main pricing section on a SaaS landing page when you need a billing-period toggle and multiple tiered plans.
+ * @props heading, description, plans (array of PricingPlan with id/name/price/features/button).
+ */
 import { ArrowRight, CircleCheck } from "lucide-react";
 import { useState } from "react";
 
